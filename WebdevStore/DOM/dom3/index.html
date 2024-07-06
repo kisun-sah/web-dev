@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document of Modul </title>
+</head>
+<style>
+    .table,tr,td{
+        padding: 10px;
+        border: 1px solid black;
+
+        border-width: 2px;
+        
+
+    }
+</style>
+
+<body id="element">
+
+    <ul id="element1">
+        
+        <li class="list-item">First Element</li>
+        <li class="list-item">Second Element</li>
+        <li class="list-item">Third Element</li>
+        
+       
+    </ul>
+
+ 
+ 
+
+   <table >
+    <tr>
+        <td>1:1</td>
+        <td>2:1</td>
+        <td>3:1</td>
+        <td>4:1</td>
+        <td>5:1</td>
+    </tr>
+    <tr>
+        <td>1:2</td>
+        <td>2:2</td>
+        <td>3:2</td>
+        <td>4:2</td>
+        <td>5:2</td>
+    </tr>
+    <tr>
+        <td>1:3</td>
+        <td>2:3</td>
+        <td>3:3</td>
+        <td>4:3</td>
+        <td>5:3</td>
+    </tr>
+    <tr>
+        <td>1:4</td>
+        <td>2:4</td>
+        <td>3:4</td>
+        <td>4:4</td>
+        <td>5:4</td>
+    </tr>
+    <tr>
+        <td>1:5</td>
+        <td>2:5</td>
+        <td>3:5</td>
+        <td>4:5</td>
+        <td>5:5</td>
+    </tr>
+</table>
+
+
+
+
+
+
+    <script>
+        //Root Node
+        // console.log(document.documentElement);
+        // console.log("Hello world !");
+        // console.log(document.body);
+        // console.log(document.head);
+
+        // childrens
+
+     //   console.log(document.body.children);
+    //     for(node of document.body.children){
+    //         console.log(document.body.children);
+    //     }
+    //     console.log(document.body.firstElementChild);
+    //      console.log(document.body.lastElementChild);
+    //    const childrenBody = Array.from(document.body.children);
+    //    console.log(childrenBody);
+
+       //siblings
+    // const ulTag =document.body.children[0]
+    // const First =ulTag.children[0]
+    // const second =ulTag.children[1]
+    //     console.log(second.previousElementSibling);
+
+
+    //Dom manuplating in Table
+   const tableTag = document.body.children[1]
+   console.log(tableTag.tBodies[0].rows[0].style="background-color:blue");
+
+  
+   console.log(tableTag.tBodies[0].rows[1].style="background-color:red");
+
+   console.log(tableTag.tBodies[0].rows[2].style="background-color:green");
+
+   console.log(tableTag.tBodies[0].rows[3].style="background-color:yellow");
+
+   console.log(tableTag.tBodies[0].rows[4].style="background-color:gray");
+
+
+   //ID search
+   
+   element1.style.background ="red";// we select  id of the ui tag element and manuplate
+
+   const ulTag = document.getElementById("element");
+   // we select  id of the body tag element and manuplate through getselectbyID
+   ulTag.style.backgroundColor="brown"
+   console.log(ulTag);
+
+   //used getElemant to manuplated
+ listitem = document.getElementsByClassName("list-item");
+  console.log(listitem);
+  console.log(document.getElementsByTagName("table"));
+
+  // used quaryselector to manuplated by javascript
+  const listitem2 = document.querySelectorAll("ul> li:first-child");//Here we select all list-item using quaryselector.
+
+  
+
+
+  // Creating and Removing the node element.
+  const newDiv =document.createElement("div");
+
+  const newTxt =document.createTextNode("Hello world !!");
+  newDiv.appendChild(newTxt)
+
+
+    </script>
+    
+</body>
+
+</html>

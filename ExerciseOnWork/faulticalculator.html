@@ -1,0 +1,145 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fault-Calculator</title>
+    <style>
+        body{
+            background-color: rgb(47, 43, 43);
+            color: white;
+            font-weight: bold;
+
+        }
+   .items{
+    display: grid;
+    grid-template-rows: 80px 69px 58px;
+    height: 220px;
+    width: 45%;
+    margin: auto;
+    background-color: rgb(34, 49, 50);
+    color: black;
+    font-size: 25px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 257px;
+    border-radius: 7px; 
+ 
+
+
+   }
+   .item{
+    padding: 12px 0px;
+    border-radius: 4px;
+    background-color: transparent;
+
+
+
+   }
+   .itm{
+    background-color: brown;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 11px 10px;
+   }
+  .h{
+    justify-content: center;
+    align-items: center;
+    font-style: initial;
+    display: flex;
+  }
+
+  #result{
+    justify-content: center;
+    align-items: center;
+    font-style: initial;
+    display: flex;
+    font-weight: bold;
+    
+  }
+    </style>
+</head>
+<body>
+    <div class="items">
+    <h2 class="h"> Fault Calculator </h2>
+
+    <div class="item">
+    <form id="Calculator-form">
+        <input class="item" type="number" id="num1" placeholder="Enter 1st Number" required>
+        <select  class="item" id="operation"> 
+            <option value="+"> +</option>
+            <option value="-"> -</option>
+            <option value="*"> *</option>
+            <option value="/"> /</option>
+        </select>
+        <input class="item" type="number" id="num2" placeholder="Enter 2nd Number" required>
+        <button  class="item itm" type="submit"> calculate</button>
+      
+    </form>
+</div>
+    
+    <p id="result"></p>
+</div>
+    <script>
+
+        document.getElementById('Calculator-form').addEventListener('submit',function (event) {
+            event.preventDefault();
+
+            let num1 = parseFloat(document.getElementById('num1').value);
+            let num2 = parseFloat(document.getElementById('num2').value);
+            let operation = document.getElementById('operation').value;
+            let result;
+
+            //Randam chance to perform a wrong operation (10%)
+            if(Math.random()< 0.1){
+                switch (operation) {
+                       case '+':
+                        operation = '-';
+                        break;
+                       
+                        case '-':
+                        operation = '/';
+                        break;
+                       
+                        case '*':
+                        operation = '+';
+                        break;
+                     
+                        case '*':
+                        operation = '**';
+                        break;
+                    }        
+                }
+                       
+                        // Perform the operation's
+
+             switch (operation) {
+                    case '+':
+                     result = num1 +num2;
+                     break;
+
+                     case '-':
+                     result = num1 - num2;
+                     break;
+
+                     case '*':
+                    result = num1 * num2;
+                     break;
+
+                     case '/':
+                     result = num1 / num2;
+                     break;
+              
+                 default:
+                     result= "Invaled operation"
+                     break;
+             }
+                 // Display the result  
+      document.getElementById('result').innerText =`Result: ${result}`;
+            
+        });
+    </script>
+</body>
+</html>
