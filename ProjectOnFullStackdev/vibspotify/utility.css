@@ -37,3 +37,34 @@ background-color:#121212 ;
 .p-1{
     padding: 10px;
 }
+
+/* For webkit-based browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #2b2b2b;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 6px;
+    border: 2px solid #2b2b2b;
+  }
+  
+  /* For Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #555 #2b2b2b;
+  }
+  
+  /* For Internet Explorer and Edge */
+  body {
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+  
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  
